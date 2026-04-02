@@ -1,0 +1,556 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #ffffff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+/* Casino Title */
+.casino-header {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.casino-title {
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: 55px;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.casino-logo {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 8px auto 0;
+}
+
+/* Main Content */
+.main-content {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    flex: 1;
+    justify-content: center;
+}
+
+/* Balance Section */
+.balance-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.deposit-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.deposit-section label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+#deposit-amount {
+    padding: 10px 12px;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    flex: 1 1 auto;
+}
+
+#deposit-amount:focus {
+    border-color: #ffed4e;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+#deposit-amount::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.deposit-button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #1a1a2e;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.deposit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.deposit-button:active {
+    transform: translateY(0);
+}
+
+.current-balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.balance-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.balance-amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* Games Section */
+.games-section {
+    width: 100%;
+    text-align: center;
+}
+
+.games-title {
+    font-size: 24px;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.game-button {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    padding: 35px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    min-height: 140px;
+}
+
+.game-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.game-button:hover::before {
+    left: 100%;
+}
+
+.game-button:hover {
+    transform: translateY(-5px);
+    border-color: #ffed4e;
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.3);
+}
+
+.game-button:active {
+    transform: translateY(-2px);
+}
+
+.game-icon {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-image {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.game-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Specific game button styles */
+.slots-button:hover {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.blackjack-button:hover {
+    background: linear-gradient(135deg, #27ae60, #229954);
+}
+
+.roulette-button:hover {
+    background: linear-gradient(135deg, #8e44ad, #7d3c98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .casino-title {
+        font-size: 35px;
+    }
+    
+    .balance-section {
+        padding: 15px;
+        max-width: 400px;
+    }
+    
+    .games-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .game-button {
+        padding: 25px 15px;
+        min-height: 120px;
+    }
+    
+    .game-image {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .game-name {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .casino-title {
+        font-size: 28px;
+    }
+    
+    .main-content {
+        gap: 20px;
+    }
+    
+    .balance-section {
+        padding: 12px;
+        max-width: 350px;
+    }
+    
+    .deposit-section {
+        gap: 8px;
+    }
+    
+    #deposit-amount {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    
+    .deposit-button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .games-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .game-button {
+        padding: 20px 10px;
+        min-height: 100px;
+    }
+    
+    .game-image {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .game-name {
+        font-size: 14px;
+    }
+}
+
+
+
+/* Styles shared by all 3 games */
+
+.game-container {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+
+.slots-container {
+    background-image: url('images/sl.jpg');
+}
+
+.blackjack-container {
+    background-image: url('images/bj.jpg');
+}
+
+.roulette-container {
+    background-image: url('images/rou.jpg');
+}
+
+.game-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+}
+
+.game-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.balance-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.back-button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+.bet-amount-display {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffd700;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    text-align: center;
+    min-height: 24px;
+    align-content: center;
+}
+
+.chip-container {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.chip {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    user-select: none;
+}
+
+.chip:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.chip:active {
+    transform: scale(0.95);
+}
+
+.chip[style*="pointer-events: none"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.clear-bet-button {
+    padding: 8px 16px;
+    background: rgba(231, 76, 60, 0.8);
+    color: #fff;
+    border: 1px solid rgba(231, 76, 60, 0.5);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.clear-bet-button:hover {
+    background: rgba(231, 76, 60, 1);
+    transform: translateY(-1px);
+}
+
+.clear-bet-button:active {
+    transform: translateY(0);
+}
+
+.clear-bet-button:disabled {
+    background: rgba(127, 127, 127, 0.5);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.play-button {
+    padding: 15px 25px;
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.play-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.play-button:disabled {
+    background: linear-gradient(45deg, #7f8c8d, #95a5a6);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.result-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.result-message {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    bottom: 20px;
+    padding: 20px 40px; 
+    border-radius: 12px;
+    font-size: 24px; 
+    font-weight: 700;
+    text-align: center;
+    white-space: pre-line;
+    z-index: 10000;
+    background: rgba(255,255,255,0.06);
+    color: #ffffff;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.result-message.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.result-message.win {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+}
+
+.result-message.lose {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+}
+
+.result-message.warn {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+}
+
+.result-message.tie {
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+}

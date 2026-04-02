@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Royale</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="icon" href="images/casino.png" type="image/png">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <img src="images/casino.png" alt="Casino" class="loading-logo">
+            <h1 class="loading-title">Casino Royale</h1>
+            <div class="loading-spinner"></div>
+            <div class="loading-progress-container">
+                <div id="loading-progress-bar"></div>
+            </div>
+            <div id="loading-progress-text">Loading... 0%</div>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div id="main-content-wrapper">
+        <div class="main-container">
+        <header class="casino-header">
+            <h1 class="casino-title">Casino Royale</h1>
+            <img src="images/casino.png" alt="Casino" class="casino-logo">
+        </header>
+        
+        <main class="main-content">
+            <div class="balance-section">
+                <div class="deposit-section">
+                    <label for="deposit-amount">Deposit €</label>
+                    <input type="number" id="deposit-amount" placeholder="Enter amount" min="0" step="0.1">
+                    <button id="deposit-btn" class="deposit-button">Deposit</button>
+                </div>
+                <div class="current-balance">
+                    <span class="balance-label">Balance</span>
+                    <span id="balance-display" class="balance-amount">€0.00</span>
+                </div>
+            </div>
+            
+            <div class="games-section">
+                <div class="games-grid">
+                    <button class="game-button slots-button" id="slots-btn">
+                        <div class="game-icon"><img src="images/slots.png" alt="Slots" class="game-image"></div>
+                        <div class="game-name">Slots</div>
+                    </button>
+                    <button class="game-button blackjack-button" id="blackjack-btn">
+                        <div class="game-icon"><img src="images/blackjack.png" alt="Blackjack" class="game-image"></div>
+                        <div class="game-name">Blackjack</div>
+                    </button>
+                    <button class="game-button roulette-button" id="roulette-btn">
+                        <div class="game-icon"><img src="images/roulette.png" alt="Roulette" class="game-image"></div>
+                        <div class="game-name">Roulette</div>
+                    </button>
+                </div>
+            </div>
+        </main>
+        </div>
+    </div>
+    
+    <script src="js/preloader.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

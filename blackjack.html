@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack - Casino Royale</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blackjack.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="icon" href="images/casino.png" type="image/png">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <img src="images/casino.png" alt="Casino" class="loading-logo">
+            <h1 class="loading-title">Loading Blackjack...</h1>
+            <div class="loading-spinner"></div>
+            <div class="loading-progress-container">
+                <div id="loading-progress-bar"></div>
+            </div>
+            <div id="loading-progress-text">Loading... 0%</div>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div id="main-content-wrapper">
+        <div class="game-container blackjack-container">
+        <!-- Header with balance and navigation -->
+        <header class="game-header">
+            <div class="balance-display">
+                <span class="balance-label">Balance:</span>
+                <span id="blackjack-balance" class="balance-amount">€0.00</span>
+            </div>
+            <button id="back-to-main" class="back-button">← Back to Casino</button>
+        </header>
+
+        <!-- Table layout: betting sidebar (left), game area (center), actions (right) -->
+        <div class="table-layout">
+            <aside class="betting-sidebar">
+                <section class="betting-section">
+                    <div class="bet-controls">
+                        <label>Bet Amount (€):</label>
+                        <div id="bet-amount-display" class="bet-amount-display">€0.00</div>
+                        <div class="chip-container">
+                            <img src="images/chips/chip1.png" alt="1€ chip" class="chip" data-value="1">
+                            <img src="images/chips/chip5.png" alt="5€ chip" class="chip" data-value="5">
+                            <img src="images/chips/chip25.png" alt="25€ chip" class="chip" data-value="25">
+                            <img src="images/chips/chip50.png" alt="50€ chip" class="chip" data-value="50">
+                            <img src="images/chips/chip100.png" alt="100€ chip" class="chip" data-value="100">
+                        </div>
+                        <button id="deal-button" class="play-button">DEAL</button>
+                        <button id="clear-bet-button" class="clear-bet-button">Clear Bet</button>
+                    </div>
+                </section>
+            </aside>
+
+            <main class="game-area">
+                <!-- Dealer's cards at the top -->
+                <section class="dealer-section">
+                    <h3 class="section-title">Dealer's Hand</h3>
+                    <div class="cards-container dealer-cards" id="dealer-cards">
+                        <!-- Dealer cards will be added here -->
+                    </div>
+                    <div class="hand-value" id="dealer-value">Value: 0</div>
+                </section>
+
+                <!-- Player's cards at the bottom -->
+                <section class="player-section">
+                    <h3 class="section-title">Your Hand</h3>
+                    <div class="cards-container player-cards" id="player-cards">
+                        <!-- Player cards will be added here -->
+                    </div>
+                    <div class="hand-value" id="player-value">Value: 0</div>
+                </section>
+                <!-- Game messages (centered under hands) -->
+                <div class="result-section">
+                    <div id="result-message" class="result-message"></div>
+                </div>
+            </main>
+
+            <aside class="action-column">
+                <!-- Action buttons on the right side -->
+                <aside class="action-buttons">
+                    <button id="hit-button" class="action-button hit-button" disabled>HIT</button>
+                    <button id="stand-button" class="action-button stand-button" disabled>STAND</button>
+                    <button id="double-button" class="action-button double-button" disabled>DOUBLE</button>
+                </aside>
+            </aside>
+        </div>
+
+        
+        </div>
+    </div>
+
+    <script src="js/preloader.js"></script>
+    <script src="js/blackjack.js"></script>
+</body>
+</html>
