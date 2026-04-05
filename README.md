@@ -23,4 +23,13 @@ An interactive, multi-game casino web application built with vanilla JavaScript,
 ## Screenshots
 
 Home
-![Numbers game](images/S2.jpg)
+![Home](images/screenshots/s1.jpg)
+
+Slots
+![Slots](images/screenshots/s2.jpg)
+
+Blackjack
+![Blackjack](images/screenshots/s3.jpg)
+
+Roulette
+![Roulette](images/screenshots/s4.jpg)
